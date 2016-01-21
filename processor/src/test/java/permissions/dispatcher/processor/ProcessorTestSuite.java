@@ -1,14 +1,18 @@
 package permissions.dispatcher.processor;
 
 import org.junit.Test;
+
+import java.net.URL;
+
 import permissions.dispatcher.processor.base.TestSuite;
 import permissions.dispatcher.processor.data.Source;
+import permissions.dispatcher.processor.exception.SupportV13MissingException;
 
 public class ProcessorTestSuite extends TestSuite {
 
     @Test public void nativeFragmentNotSupported() {
         expectRuntimeException("PermissionsDispatcher for annotated class 'MyFragment' can't be generated, because the support-v13 dependency is missing on your project");
-        assertJavaSource(Source.NativeFragmentNotSupported);
+        assertJavaSource("MyFragment", "error/fragment/native");
     }
 
     @Test public void noPermissionActivity() {
