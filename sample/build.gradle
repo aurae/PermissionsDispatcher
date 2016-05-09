@@ -24,11 +24,16 @@ android {
         pre23 {
             targetSdkVersion 22
         }
+        aa {
+        }
     }
 }
 
 dependencies {
     compile "com.android.support:appcompat-v7:$SUPPORT_LIBRARY_VERSION"
+
+    apt "org.androidannotations:androidannotations:$AA_VERSION"
+    aaCompile "org.androidannotations:androidannotations-api:$AA_VERSION"
 
     // The 'exclude' clause simulates the optional dependency on support-v13 for local Project Dependencies
     compile (project(':library')) { exclude group: 'com.android.support', module: 'support-v13' }
