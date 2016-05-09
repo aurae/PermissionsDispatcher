@@ -24,7 +24,7 @@ import permissions.dispatcher.sample.contacts.ContactsFragment;
 
 @RuntimePermissions
 @EActivity(R.layout.activity_main)
-public class AaActivity extends AppCompatActivity {
+public class AaActivity extends AppCompatActivity {#
 
 	@ViewById(R.id.button_camera) View btCamera;
 	@ViewById(R.id.button_contacts) View btContacts;
@@ -34,11 +34,11 @@ public class AaActivity extends AppCompatActivity {
 		switch (v.getId()) {
 			case R.id.button_camera:
 				// NOTE: delegate the permission handling to generated method
-//				AaActivityPermissionsDispatcher.showCameraWithCheck(this);
+				AaActivityPermissionsDispatcher.showCameraWithCheck(this);
 				break;
 			case R.id.button_contacts:
 				// NOTE: delegate the permission handling to generated method
-//				AaActivityPermissionsDispatcher.showContactsWithCheck(this);
+				AaActivityPermissionsDispatcher.showContactsWithCheck(this);
 				break;
 		}
 	}
@@ -47,7 +47,7 @@ public class AaActivity extends AppCompatActivity {
 	public void onRequestPermissionsResult(int requestCode, @NonNull String[] permissions, @NonNull int[] grantResults) {
 		super.onRequestPermissionsResult(requestCode, permissions, grantResults);
 		// NOTE: delegate the permission handling to generated method
-//		AaActivityPermissionsDispatcher.onRequestPermissionsResult(this, requestCode, grantResults);
+		AaActivityPermissionsDispatcher.onRequestPermissionsResult(this, requestCode, grantResults);
 	}
 
 	@NeedsPermission(Manifest.permission.CAMERA) void showCamera() {

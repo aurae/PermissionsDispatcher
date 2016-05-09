@@ -63,6 +63,7 @@ testV13.dependsOn test
 dependencies {
     compile "org.jetbrains.kotlin:kotlin-stdlib:$KOTLIN_VERSION"
     compile "com.squareup:javapoet:$JAVAPOET_VERSION"
+    compile "org.androidannotations:androidannotations:$AA_VERSION"
 
     testCompile "junit:junit:$JUNIT_VERSION"
     testCompile "com.google.testing.compile:compile-testing:$COMPILE_TESTING_VERSION"
